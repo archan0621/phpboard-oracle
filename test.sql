@@ -1,0 +1,1 @@
+select * from (select A.*, ROWNUM RNUM FROM (SELECT info.IN_ID, TO_CHAR(d.D_DATE, 'YYYY-MM-DD HH24:MI:SS') AS d_date, info.IN_NAME FROM d, info WHERE d.D_SEQ = info.IN_SEQ order by d_date)A WHERE ROWNUM <=1000) WHERE RNUM>=970;
